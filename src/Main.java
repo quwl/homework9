@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Task 1");
@@ -34,8 +36,11 @@ public class Main {
         System.out.println("Срудняя сумма трат за месяц составила " + averageWaste + " рублей");
         System.out.println("Task 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int h = reverseFullName.length - 1; h >= 0; h--) {
-            System.out.print(reverseFullName[h]);
+        for (int h = 0; h < reverseFullName.length / 2; h++) {
+            char temp = reverseFullName[h];
+            reverseFullName[h] = reverseFullName[reverseFullName.length - h - 1];
+            reverseFullName[reverseFullName.length - h - 1] = temp;
+            System.out.println((Arrays.toString(reverseFullName)));
         }
     }
 }
